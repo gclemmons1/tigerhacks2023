@@ -1,0 +1,42 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Synaesthetic</title>
+    <link rel="stylesheet" href="styles2.css">
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.2/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+  </head>
+  
+
+  <body>
+ 
+    <!-- Title block -->
+    <div class="flex justify-center items-center h-screen">
+      <div class="text-center">
+        <label class="block mb-2 text-5xl p-5 font-medium text-gray-900 dark:text-white" for="file_input" id="title_text">Synaesthetic</label>
+        <label class="block mb-2 text-2xl font-medium text-gray-900 dark:text-white" for="file_input" id="title_text">Upload an audio file to start the show.</label>
+        <input class="block w-100 h-100 text-xl text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file" accept=".mp3, .wav">
+        <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">Accepted file formats: .mp3, .wav</p>
+        <a class="text-blue-500" id="title_text" href="https://devpost.com/software/laffere-moment">How does this work?</a>
+      </div>
+    </div>
+
+    <!-- Volume slider -->
+    <div class="volume-control flex items-center justify-center space-x-4 mt-4">
+      <i class="fas fa-volume-down" style="z-index: 10;color: white;"></i>
+      <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="1" class="slider w-64" />
+      <i class="fas fa-volume-up" style="z-index: 10;color: white;"></i>
+    </div>
+    
+    <!-- Canvas (for animation) -->
+    <div id="container" class="absolute inset-0 transition-opacity opacity-0">
+      <canvas id="canvas"></canvas>
+    </div>
+    
+    <script src="script.js"></script>
+    
+  </body>
+
+</html>
